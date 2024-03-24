@@ -1,5 +1,5 @@
 {
-    "name": "niiph/sylius-product-label-plugin",
+    "name": "niiph/product-label-plugin",
     "description": "",
     "type": "sylius-plugin",
     "keywords": [
@@ -8,7 +8,7 @@
     ],
     "license": "proprietary",
     "require": {
-        "php": "^8.2",
+        "php": "^8.1",
         "sylius/sylius": "^1.12 || ^1.13",
         "sylius/mailer-bundle":  "^1.8 || ^2.0@beta",
         "symfony/webpack-encore-bundle": "^1.15"
@@ -62,13 +62,13 @@
     "autoload": {
         "psr-4": {
             "Niiph\\SyliusProductLabelPlugin\\": "src/",
-            "Tests\\Niiph\\SyliusProductLabelPlugin\\": "tests/"
+            "Niiph\\SyliusProductLabelPlugin\\config\\": "config/"
         }
     },
     "autoload-dev": {
-        "classmap": [
-            "tests/Application/Kernel.php"
-        ]
+        "psr-4": {
+            "Tests\\Niiph\\SyliusProductLabelPlugin\\": "tests/"
+        }
     },
     "scripts": {
         "post-install-cmd": [

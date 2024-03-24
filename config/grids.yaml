@@ -1,0 +1,38 @@
+sylius_grid:
+    grids:
+        niiph_admin_label:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: "%niiph_product_label.model.label.class%"
+            sorting:
+                code: asc
+            fields:
+                code:
+                    type: string
+                    label: sylius.ui.code
+                    sortable: code
+                    position: 0
+                text:
+                    type: twig
+                    path: .
+                    options:
+                        template: "@NiiphSyliusProductLabelPlugin/Common/_formatText.html.twig"
+                    label: sylius.ui.text
+                    position: 1
+            filters:
+                search:
+                    type: string
+                    label: sylius.ui.search
+                    options:
+                        fields: [ code, translations.text ]
+            actions:
+                main:
+                    create:
+                        type: create
+                item:
+                    update:
+                        type: update
+                    delete:
+                        type: delete
+                        

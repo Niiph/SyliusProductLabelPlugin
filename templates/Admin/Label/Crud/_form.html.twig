@@ -1,0 +1,11 @@
+{% from '@SyliusAdmin/Macro/translationForm.html.twig' import translationForm %}
+
+<div class="ui two column stackable grid">
+    <div class="ui segment">
+        {{ form_errors(form) }}
+        {{ form_row(form.code) }}
+        {{ form_row(form.textColor) }}
+        {{ form_row(form.backgroundColor) }}
+    </div>
+    {{ translationForm(form.translations) }}
+</div>

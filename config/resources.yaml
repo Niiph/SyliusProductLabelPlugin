@@ -1,0 +1,15 @@
+sylius_resource:
+    resources:
+        niiph_product_label.label:
+            driver: doctrine/orm
+            classes:
+                model: Niiph\SyliusProductLabelPlugin\Entity\Label
+                interface: Niiph\SyliusProductLabelPlugin\Entity\LabelInterface
+                form: Niiph\SyliusProductLabelPlugin\Form\Type\LabelType
+                controller: Sylius\Bundle\ResourceBundle\Controller\ResourceController
+                repository: Niiph\SyliusProductLabelPlugin\Repository\LabelRepository
+            translation:
+                classes:
+                    model: Niiph\SyliusProductLabelPlugin\Entity\LabelTranslation
+                    interface: Niiph\SyliusProductLabelPlugin\Entity\LabelTranslationInterface
+                    form: Niiph\SyliusProductLabelPlugin\Form\Type\LabelTranslationType
