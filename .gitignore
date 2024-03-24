@@ -18,3 +18,4 @@
 /php.ini
 
 /.idea
+/supervisord.log
