@@ -1,5 +1,6 @@
 {
     "name": "niiph/sylius-product-label-plugin",
+    "description": "",
     "type": "sylius-plugin",
     "keywords": [
         "sylius",
