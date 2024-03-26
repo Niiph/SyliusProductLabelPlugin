@@ -1,0 +1,8 @@
+sylius_ui:
+    events:
+        sylius.admin.channel.form.first_column_content:
+            blocks:
+                product_labels:
+                    template: '@NiiphSyliusProductLabelPlugin/Admin/Channel/Form/_labels.html.twig'
+                    priority: 5
+                    

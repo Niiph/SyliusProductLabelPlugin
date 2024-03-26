@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Niiph\SyliusProductLabelPlugin\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
@@ -10,9 +12,14 @@ trait LabelsTrait
 {
     #[ORM\ManyToMany(targetEntity: Label::class, cascade: ['persist', 'remove'])]
     #[ORM\JoinTable()]
+    #[ORM\OrderBy(['priority' => 'DESC'])]
     protected Collection $labels;
 
-    /** @return Collection<LabelInterface> */
+    /**
+     * @return Collection<array-key, LabelInterface>
+     *
+     * @psalm-return Collection<array-key, LabelInterface>
+     */
     public function getLabels(): Collection
     {
         return $this->labels;

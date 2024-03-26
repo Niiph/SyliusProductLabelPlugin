@@ -10,6 +10,7 @@ Add plugin dependencies to your `config/bundles.php` file:
 return [
     ...
     
+    Niiph\SyliusCommonPlugin\NiiphSyliusCommonPlugin::class => ['all' => true],
     Niiph\SyliusProductLabelPlugin\NiiphSyliusProductLabelPlugin::class  => ['all' => true]
 ];
 ```
@@ -33,7 +34,7 @@ Import routing in your `config/routes.yaml` file:
 ...
 
 niiph_product_label_plugin:
-    resource: "@NiiphSyliusProductLabelPlugin/config/routes/routes.yaml"
+    resource: "@NiiphSyliusProductLabelPlugin/config/routes.yaml"
 ```
 
 Add trait and interface to your Product entity class and make sure to initialise `label` collection in constructor
@@ -61,6 +62,26 @@ class Product extends BaseProduct implements HasLabelsInterface
 }
 ```
 
+Add trait and interface to Channel:
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace App\Entity\Channel;
+
+use Niiph\SyliusProductLabelPlugin\Entity\ChannelLabelConfigTrait;
+use Niiph\SyliusProductLabelPlugin\Entity\HasChannelLabelConfigInterface;
+use Sylius\Component\Core\Model\Channel as BaseChannel;
+
+class Channel extends BaseChannel implements HasChannelLabelConfigInterface
+{
+    use ChannelLabelConfigTrait;
+    
+}
+```
+
 Add webpack mapping:
 
 1. Add new entries to your `webpack.config.js`
@@ -68,10 +89,10 @@ Add webpack mapping:
 // ./webpack.config.js
 
 // Shop config
-    .addEntry('niiph-producer-label-shop', './vendor/niiph/sylius-product-label-plugin/assets/shop/entry.js')
+    .addEntry('niiph-producer-label-shop', './vendor/niiph/product-label-plugin/assets/shop/entry.js')
 
 // Admin config
-    .addEntry('niiph-producer-label-admin', './vendor/niiph/sylius-product-label-plugin/assets/admin/entry.js')
+    .addEntry('niiph-producer-label-admin', './vendor/niiph/product-label-plugin/assets/admin/entry.js')
 ```
 
 2. Add encore functions to your templates

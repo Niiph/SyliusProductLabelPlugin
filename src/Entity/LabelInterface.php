@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Niiph\SyliusProductLabelPlugin\Entity;
 
 use Sylius\Component\Resource\Model\CodeAwareInterface;
@@ -14,6 +16,10 @@ interface LabelInterface extends
     ResourceInterface,
     CodeAwareInterface
 {
+    public function getPriority(): ?int;
+
+    public function setPriority(?int $priority): void;
+
     public function getTextColor(): ?string;
 
     public function setTextColor(?string $textColor): void;
@@ -21,4 +27,8 @@ interface LabelInterface extends
     public function getBackgroundColor(): ?string;
 
     public function setBackgroundColor(?string $backgroundColor): void;
+
+    public function getText(): ?string;
+
+    public function setText(?string $text): void;
 }

@@ -1,0 +1,17 @@
+niiph_product_label:
+    form:
+        label:
+            background_color: 'Background color'
+            code: 'Code'
+            new_product_days: 'Number of days displaying label'
+            new_product_label: 'New product label'
+            priority: 'Priority'
+            text: 'Text'
+            text_color: 'Text color'
+            translations: 'Translations'
+    ui:
+        label: 'Label'
+        label_header: 'Labels'
+        label_subheader: 'Labels` management'
+        labels: 'Labels'
+        product_labels: 'Product labels'

@@ -1,4 +1,8 @@
-<div class="labels">
+<div class="p-labels">
+    {% set isNew = entityIsNew(product) %}
+    {% if isNew %}
+        {% include '@NiiphSyliusProductLabelPlugin/Common/_formatText.html.twig' with {'data': getNewLabel() } %}
+    {% endif %}
     {% for label in product.labels %}
         {% include '@NiiphSyliusProductLabelPlugin/Common/_formatText.html.twig' with {'data': label} %}
     {% endfor %}
