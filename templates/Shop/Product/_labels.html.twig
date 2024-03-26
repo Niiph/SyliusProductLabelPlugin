@@ -1,0 +1,5 @@
+<div class="labels">
+    {% for label in product.labels %}
+        {% include '@NiiphSyliusProductLabelPlugin/Common/_formatText.html.twig' with {'data': label} %}
+    {% endfor %}
+</div>

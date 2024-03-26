@@ -1,0 +1,13 @@
+niiph_product_label:
+    form:
+        label:
+            background_color: 'Kolor tła'
+            code: 'Kod'
+            text: 'Tekst'
+            text_color: 'Kolor tekstu'
+            translations: 'Tłumaczenia'
+    ui:
+        label: 'Etykieta'
+        label_header: 'Etykiety'
+        label_subheader: 'Zarządzaj etykietami'
+        labels: 'Etykiety'
