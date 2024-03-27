@@ -1,4 +1,4 @@
-# Sylius Callout Plugin
+# Sylius Product Label Plugin
 
 The product label plugin for [Sylius](https://sylius.com/) allows you to add labels (badges) for products and other lists (like producers).  
 Labels are easily manageable and assigned to product one by one. You can also configure extra label for new products  
