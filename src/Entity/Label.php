@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Niiph\SyliusProductLabelPlugin\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as Serializer;
 use Niiph\SyliusProductLabelPlugin\Repository\LabelRepository;
 use Sylius\Component\Resource\Model\ToggleableTrait;
 use Sylius\Component\Resource\Model\TranslatableTrait;
@@ -23,6 +24,7 @@ class Label implements LabelInterface
     use ToggleableTrait;
     use TranslatableTrait {
         __construct as private initializeTranslationsCollection;
+        getTranslation as private doGetTranslation;
     }
 
     public function __construct()
@@ -34,6 +36,9 @@ class Label implements LabelInterface
     #[NotBlank]
     protected ?string $code = null;
 
+    #[ORM\Column(type: 'integer', nullable: true)]
+    protected ?int $priority;
+
     #[ORM\Column(type: 'string', nullable: true)]
     #[CssColor]
     protected ?string $textColor = null;
@@ -41,6 +46,10 @@ class Label implements LabelInterface
     #[ORM\Column(type: 'string', nullable: true)]
     #[CssColor]
     protected ?string $backgroundColor = null;
+
+    // this is a dummy parameter only for serializer
+    #[Serializer\Accessor(getter: 'getText', setter: 'setText')]
+    protected ?string $text = null;
 
     public function getCode(): ?string
     {
@@ -50,6 +59,16 @@ class Label implements LabelInterface
     public function setCode(?string $code): void
     {
         $this->code = $code;
+    }
+
+    public function getPriority(): ?int
+    {
+        return $this->priority;
+    }
+
+    public function setPriority(?int $priority): void
+    {
+        $this->priority = $priority;
     }
 
     public function getTextColor(): ?string
@@ -70,6 +89,14 @@ class Label implements LabelInterface
     public function setBackgroundColor(?string $backgroundColor): void
     {
         $this->backgroundColor = $backgroundColor;
+    }
+
+    public function getTranslation(?string $locale = null): LabelTranslationInterface
+    {
+        /** @var LabelTranslationInterface $translation */
+        $translation = $this->doGetTranslation($locale);
+
+        return $translation;
     }
 
     public function getText(): ?string

@@ -1,0 +1,7 @@
+<div class="ui tab" data-tab="labels">
+    <h3 class="ui top attached header">{{ 'niiph_product_label.ui.labels'|trans }}</h3>
+
+    <div class="ui attached segment">
+        {{ form_row(form.labels, {'remote_url': path('niiph_product_label_admin_ajax_label_by_phrase'), 'load_edit_url': path('niiph_product_label_admin_ajax_find_labels')}) }}
+    </div>
+</div>

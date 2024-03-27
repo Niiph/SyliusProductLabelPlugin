@@ -2,3 +2,4 @@ imports:
     - { resource: "@NiiphSyliusProductLabelPlugin/config/resources.yaml" }
     - { resource: "@NiiphSyliusProductLabelPlugin/config/grids.yaml" }
     - { resource: "@NiiphSyliusProductLabelPlugin/config/services.yaml" }
+    - { resource: "@NiiphSyliusProductLabelPlugin/config/events.yaml" }

@@ -20,6 +20,11 @@ sylius_grid:
                         template: "@NiiphSyliusProductLabelPlugin/Common/_formatText.html.twig"
                     label: sylius.ui.text
                     position: 1
+                priority:
+                    type: string
+                    label: sylius.ui.priority
+                    position: 2
+                    sortable: ~
             filters:
                 search:
                     type: string

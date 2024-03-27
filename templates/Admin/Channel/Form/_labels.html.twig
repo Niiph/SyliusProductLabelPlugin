@@ -1,0 +1,6 @@
+<div class="ui hidden divider"></div>
+<h4 class="ui top attached large header">{{ 'niiph_product_label.ui.product_labels'|trans }}</h4>
+<div class="ui attached segment">
+    {{ form_row(form.channelLabelConfig.days) }}
+    {{ form_row(form.channelLabelConfig.label, {'remote_url': path('niiph_product_label_admin_ajax_label_by_phrase'), 'load_edit_url': path('niiph_product_label_admin_ajax_find_labels')}) }}
+</div>

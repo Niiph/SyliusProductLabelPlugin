@@ -1,0 +1,27 @@
+niiph_product_label_admin_ajax_label_by_phrase:
+    path: /label/search
+    methods: [GET]
+    defaults:
+        _controller: niiph_product_label.controller.label::indexAction
+        _format: json
+        _sylius:
+            permission: true
+            repository:
+                method: findByNamePart
+                arguments:
+                    phrase: $phrase
+                    locale: "expr:service('sylius.context.locale').getLocaleCode()"
+                    limit: 10
+
+niiph_product_label_admin_ajax_find_labels:
+    path: /labels
+    methods: [GET]
+    defaults:
+        _controller: niiph_product_label.controller.label::indexAction
+        _format: json
+        _sylius:
+            permission: true
+            repository:
+                method: findById
+                arguments:
+                    id: $id

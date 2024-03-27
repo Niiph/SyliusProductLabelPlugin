@@ -9,7 +9,7 @@ use Sylius\Bundle\ResourceBundle\Form\EventSubscriber\AddCodeFormSubscriber;
 use Sylius\Bundle\ResourceBundle\Form\Type\ResourceTranslationsType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ColorType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -19,11 +19,17 @@ class LabelType extends AbstractType
     {
         $builder
             ->addEventSubscriber(new AddCodeFormSubscriber())
+            ->add('priority', IntegerType::class, [
+                'label' => 'niiph_product_label.form.label.priority',
+                'required' => false,
+            ])
             ->add('textColor', ColorType::class, [
                 'label' => 'niiph_product_label.form.label.text_color',
+                'required' => false,
             ])
             ->add('backgroundColor', ColorType::class, [
                 'label' => 'niiph_product_label.form.label.background_color',
+                'required' => false,
             ])
             ->add('translations', ResourceTranslationsType::class, [
                 'entry_type' => LabelTranslationType::class,

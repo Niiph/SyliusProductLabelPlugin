@@ -3,6 +3,9 @@ niiph_product_label:
         label:
             background_color: 'Kolor tła'
             code: 'Kod'
+            new_product_days: 'Ilość dni wyświetlania etykiety'
+            new_product_label: 'Etykieta nowych produktów'
+            priority: 'Priorytet'
             text: 'Tekst'
             text_color: 'Kolor tekstu'
             translations: 'Tłumaczenia'
@@ -11,3 +14,4 @@ niiph_product_label:
         label_header: 'Etykiety'
         label_subheader: 'Zarządzaj etykietami'
         labels: 'Etykiety'
+        product_labels: 'Etykiety produktu'

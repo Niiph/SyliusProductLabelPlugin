@@ -3,14 +3,14 @@
     overflow: inherit !important;
 }
 
-.labels {
+.p-labels {
     position: absolute;
     left: -4px;
     top: 10px;
     z-index: 99;
 }
 
-.label {
+.p-label {
     margin-bottom: 5px;
     height: 24px;
     display: block;
@@ -21,9 +21,7 @@
     font-size: 10px;
     font-weight: 900;
     line-height: 20px;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    white-space: nowrap;
     vertical-align: baseline;
     font-family: Roboto, sans-serif !important;
-    clip-path: inset(100% round 5px 5px);
+    clip-path: xywh(0 0 100% 100% round 5px);
 }

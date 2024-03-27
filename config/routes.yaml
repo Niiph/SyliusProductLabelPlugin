@@ -1,0 +1,7 @@
+niiph_product_label_ajax:
+    resource: "@NiiphSyliusProductLabelPlugin/config/routes/ajax.yaml"
+    prefix: /ajax
+    
+niiph_product_label_admin:
+    resource: "@NiiphSyliusProductLabelPlugin/config/routes/admin.yaml"
+    prefix: /admin
