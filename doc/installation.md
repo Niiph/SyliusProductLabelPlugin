@@ -131,7 +131,7 @@ Finally, add template
 {% include '@NiiphSyliusProductLabelPlugin/Shop/Product/_labels.html.twig' %}
 ```
 in proper place (originally at `SyliusShopBundle/Product/_box.html.twig`):
-```twig
+```diff
 {% import "@SyliusShop/Common/Macro/money.html.twig" as money %}
 
 {{ sonata_block_render_event('sylius.shop.product.index.before_box', {'product': product}) }}
@@ -145,7 +145,7 @@ in proper place (originally at `SyliusShopBundle/Product/_box.html.twig`):
                 </div>
             </div>
         </div>
-        {% include '@NiiphSyliusProductLabelPlugin/Shop/Product/_labels.html.twig' %}
++       {% include '@NiiphSyliusProductLabelPlugin/Shop/Product/_labels.html.twig' %}
         {% include '@SyliusShop/Product/_mainImage.html.twig' with {'product': product} %}
     </a>
     <div class="content">
