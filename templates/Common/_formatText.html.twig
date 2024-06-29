@@ -1,4 +1,9 @@
-<span class="p-label" style="{% if data.backgroundColor is not empty %}background-color: {{ data.backgroundColor }};{% endif %}
-    {% if data.textColor is not empty %}color: {{ data.textColor }};{% endif %}">
+{% if data is not empty %}
+    <span class="p-label"
+          style="
+              {% if data.backgroundColor is not empty %}background-color: {{ data.backgroundColor }};{% endif %}
+              {% if data.textColor is not empty %}color: {{ data.textColor }};{% endif %}
+          ">
     {{ data.text }}
-</span>
+    </span>
+{% endif %}
